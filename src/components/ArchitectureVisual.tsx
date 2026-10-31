@@ -70,25 +70,21 @@ export const ArchitectureVisual: React.FC = () => {
                 <Box className="w-3.5 h-3.5 text-teal-400" />
                 <span>Servicios Docker</span>
               </div>
-              <span className="text-[10px] text-slate-500">4 stacks</span>
+              <span className="text-[10px] text-slate-500">3 servicios</span>
             </div>
 
-            <div className="grid grid-cols-2 gap-1.5 text-[11px]">
+            <div className="grid grid-cols-3 gap-1.5 text-[11px]">
               <div className="px-2 py-1.5 rounded-lg bg-slate-950/70 border border-slate-800/60 flex items-center justify-between text-slate-300">
                 <span className="font-semibold text-emerald-300">hub</span>
-                <span className="text-[10px] text-slate-500">:portal</span>
+                <span className="text-[10px] text-slate-500">core</span>
               </div>
               <div className="px-2 py-1.5 rounded-lg bg-slate-950/70 border border-slate-800/60 flex items-center justify-between text-slate-300">
                 <span className="font-semibold text-teal-300">atlas</span>
-                <span className="text-[10px] text-slate-500">:proyectos</span>
+                <span className="text-[10px] text-slate-500">app</span>
               </div>
               <div className="px-2 py-1.5 rounded-lg bg-slate-950/70 border border-slate-800/60 flex items-center justify-between text-slate-300">
                 <span className="font-semibold text-emerald-300">coche</span>
-                <span className="text-[10px] text-slate-500">:vehículo</span>
-              </div>
-              <div className="px-2 py-1.5 rounded-lg bg-slate-950/70 border border-slate-800/60 flex items-center justify-between text-slate-300">
-                <span className="font-semibold text-teal-300">kuma</span>
-                <span className="text-[10px] text-slate-500">:uptime</span>
+                <span className="text-[10px] text-slate-500">app</span>
               </div>
             </div>
           </div>

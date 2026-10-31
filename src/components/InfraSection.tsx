@@ -37,7 +37,7 @@ export const InfraSection: React.FC = () => {
       step: '04',
       title: 'Servicios Docker',
       subtitle: 'Contenedores aislados',
-      desc: 'Instancias independientes para Hub, Atlas, Coche y Uptime Kuma.',
+      desc: 'Instancias independientes para Hub, Atlas y Coche.',
       icon: Layers,
       color: 'text-emerald-400',
       border: 'border-emerald-500/20',

@@ -1,7 +1,7 @@
 import React from 'react';
 import { siteConfig } from '../data/config';
 import { DynamicIcon } from './DynamicIcon';
-import { ArrowUpRight, Activity, ExternalLink } from 'lucide-react';
+import { ArrowUpRight } from 'lucide-react';
 
 export const ServicesSection: React.FC = () => {
   return (
@@ -19,7 +19,7 @@ export const ServicesSection: React.FC = () => {
           </div>
 
           <div className="text-xs font-mono text-slate-400 bg-slate-900/80 border border-slate-800 px-3 py-1.5 rounded-lg w-fit">
-            <span>4 servicios activos</span>
+            <span>{siteConfig.services.length} servicios activos</span>
           </div>
         </div>
 
@@ -85,33 +85,6 @@ export const ServicesSection: React.FC = () => {
               </a>
             );
           })}
-        </div>
-
-        {/* Sección de Estado integrada discretamente */}
-        <div className="mt-8 p-4 sm:p-5 rounded-2xl bg-[#0c101a] border border-slate-800/80 flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4">
-          <div className="flex items-center gap-3">
-            <div className="w-9 h-9 rounded-xl bg-teal-500/10 border border-teal-500/20 text-teal-400 flex items-center justify-center shrink-0">
-              <Activity className="w-4 h-4 animate-pulse" />
-            </div>
-            <div>
-              <div className="text-sm font-semibold text-white">
-                Monitorización en tiempo real
-              </div>
-              <div className="text-xs text-slate-400">
-                Disponibilidad y tiempos de respuesta auditados con Uptime Kuma.
-              </div>
-            </div>
-          </div>
-
-          <a
-            href={siteConfig.uptimeKuma.url}
-            target="_blank"
-            rel="noopener noreferrer"
-            className="inline-flex items-center gap-1.5 px-3.5 py-1.5 rounded-lg text-xs font-medium text-slate-200 hover:text-white bg-slate-800 hover:bg-slate-700 border border-slate-700 transition-colors shrink-0"
-          >
-            <span>Ver panel en Kuma</span>
-            <ExternalLink className="w-3.5 h-3.5 text-slate-400" />
-          </a>
         </div>
       </div>
     </section>

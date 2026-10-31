@@ -18,7 +18,7 @@ export const siteConfig: SiteConfig = {
   },
 
   /**
-   * Servicios principales del Homelab
+   * Servicios públicos del Homelab
    */
   services: [
     {
@@ -51,29 +51,17 @@ export const siteConfig: SiteConfig = {
       accentColor: 'emerald',
       isExternal: true,
     },
-    {
-      id: 'uptime-kuma',
-      name: 'Uptime Kuma',
-      description: 'Panel de monitorización en tiempo real de disponibilidad y latencia.',
-      url: import.meta.env.VITE_UPTIME_KUMA_URL || 'https://kuma.guacamolegh.es',
-      icon: 'Activity',
-      category: 'monitoring',
-      accentColor: 'cyan',
-      isExternal: true,
-    },
   ],
 
   /**
-   * Configuración de Uptime Kuma
+   * Configuración de Uptime Kuma (deshabilitado para el público general)
    */
   uptimeKuma: {
-    enabled: true,
+    enabled: false,
     name: 'Uptime Kuma',
-    description:
-      'Monitorización continua del estado y respuesta de los servicios del servidor.',
-    url: import.meta.env.VITE_UPTIME_KUMA_URL || 'https://kuma.guacamolegh.es',
-    statusPageUrl: import.meta.env.VITE_UPTIME_STATUS_PAGE_URL || 'https://kuma.guacamolegh.es',
-    note: 'Accede al panel para consultar el historial de disponibilidad y tiempos de respuesta.',
+    description: '',
+    url: '',
+    note: '',
   },
 
   /**
