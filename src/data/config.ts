@@ -1,47 +1,32 @@
 import type { SiteConfig } from '../types';
 
-/**
- * ==============================================================================
- * GUACAMOLEGH - CONFIGURACIÓN CENTRALIZADA DEL HOMELAB & PROYECTOS
- * ==============================================================================
- * Modifica este archivo para añadir, eliminar o actualizar servicios, enlaces
- * y proyectos sin tener que tocar los componentes visuales.
- */
-
 export const siteConfig: SiteConfig = {
   brandName: 'GuacamoleGH',
   domain: 'guacamolegh.es',
   heroTitle: 'GuacamoleGH',
-  heroSubtitle: 'Personal services & projects',
+  heroSubtitle: 'Portal de servicios y homelab personal',
   heroDescription:
-    'A collection of personal projects, self-hosted services and tools running on a private homelab server.',
+    'Punto de entrada a mis aplicaciones self-hosted, herramientas de gestión y proyectos personales.',
   
-  // Enlace a tu perfil u organización de GitHub
-  // Puedes sobreescribirlo con la variable de entorno VITE_GITHUB_URL en .env
-  githubUrl: import.meta.env.VITE_GITHUB_URL || 'https://github.com/guacamolegh',
+  githubUrl: import.meta.env.VITE_GITHUB_URL || 'https://github.com/GuacamoleGH',
 
-  // Configuración de infraestructura (badges informativos en hero y footer)
   infraInfo: {
-    os: 'Ubuntu Server LTS',
+    os: 'Ubuntu Server',
     orchestrator: 'Docker Compose',
     network: 'Cloudflare Tunnel',
-    webServer: 'Nginx Alpine',
+    webServer: 'Nginx',
   },
 
   /**
-   * ----------------------------------------------------------------------------
-   * SERVICIOS PRINCIPALES DEL HOMELAB
-   * ----------------------------------------------------------------------------
-   * Cada tarjeta en la sección de servicios representa un contenedor o app activa.
+   * Servicios principales del Homelab
    */
   services: [
     {
       id: 'hub',
       name: 'Hub',
-      description: 'Portal principal de acceso centralizado y herramientas personales del homelab.',
+      description: 'Portal principal y punto de acceso centralizado a herramientas personales.',
       url: import.meta.env.VITE_HUB_URL || 'https://hub.guacamolegh.es',
       icon: 'LayoutGrid',
-      badge: 'Core Portal',
       category: 'core',
       accentColor: 'emerald',
       isExternal: true,
@@ -49,10 +34,9 @@ export const siteConfig: SiteConfig = {
     {
       id: 'atlas',
       name: 'Atlas',
-      description: 'Aplicación personal y plataforma de organización y mapas de proyectos.',
+      description: 'Plataforma personal de organización, mapas y gestión de proyectos.',
       url: import.meta.env.VITE_ATLAS_URL || 'https://atlas.guacamolegh.es',
       icon: 'Compass',
-      badge: 'Personal App',
       category: 'application',
       accentColor: 'cyan',
       isExternal: true,
@@ -60,80 +44,67 @@ export const siteConfig: SiteConfig = {
     {
       id: 'coche',
       name: 'Coche',
-      description: 'Gestión integral, telemetría, revisiones y mantenimiento del vehículo.',
+      description: 'Control de mantenimiento, telemetría, consumos y estado del vehículo.',
       url: import.meta.env.VITE_COCHE_URL || 'https://coche.guacamolegh.es',
       icon: 'Car',
-      badge: 'Vehículo & IoT',
       category: 'iot',
-      accentColor: 'blue',
+      accentColor: 'emerald',
       isExternal: true,
     },
     {
       id: 'uptime-kuma',
       name: 'Uptime Kuma',
-      description: 'Monitorización 24/7 de disponibilidad, latencia y estado de los servicios.',
-      url: import.meta.env.VITE_UPTIME_KUMA_URL || 'https://status.guacamolegh.es',
+      description: 'Panel de monitorización en tiempo real de disponibilidad y latencia.',
+      url: import.meta.env.VITE_UPTIME_KUMA_URL || 'https://kuma.guacamolegh.es',
       icon: 'Activity',
-      badge: 'Monitorización',
       category: 'monitoring',
-      accentColor: 'purple',
+      accentColor: 'cyan',
       isExternal: true,
     },
   ],
 
   /**
-   * ----------------------------------------------------------------------------
-   * CONFIGURACIÓN DE UPTIME KUMA
-   * ----------------------------------------------------------------------------
-   * Requisitos de seguridad:
-   * - No exponemos tokens ni APIs privadas en el frontend.
-   * - Enlazamos a la página de estado pública oficial o al panel de Uptime Kuma.
-   * - Si tienes configurada una Status Page pública en Uptime Kuma (ej. /status/servicios
-   *   o un subdominio status.guacamolegh.es), asígnala aquí o mediante VITE_UPTIME_STATUS_PAGE_URL.
+   * Configuración de Uptime Kuma
    */
   uptimeKuma: {
     enabled: true,
-    name: 'Monitorización Uptime Kuma',
+    name: 'Uptime Kuma',
     description:
-      'Sistema de monitorización activo que comprueba continuamente la respuesta y salud de todos los contenedores y dominios expuestos.',
-    url: import.meta.env.VITE_UPTIME_KUMA_URL || 'https://status.guacamolegh.es',
-    statusPageUrl: import.meta.env.VITE_UPTIME_STATUS_PAGE_URL || 'https://status.guacamolegh.es',
-    note: 'El estado se audita mediante sondas HTTP/TCP periódicas a través de Uptime Kuma.',
+      'Monitorización continua del estado y respuesta de los servicios del servidor.',
+    url: import.meta.env.VITE_UPTIME_KUMA_URL || 'https://kuma.guacamolegh.es',
+    statusPageUrl: import.meta.env.VITE_UPTIME_STATUS_PAGE_URL || 'https://kuma.guacamolegh.es',
+    note: 'Accede al panel para consultar el historial de disponibilidad y tiempos de respuesta.',
   },
 
   /**
-   * ----------------------------------------------------------------------------
-   * PROYECTOS PERSONALES Y REPOSITORIOS
-   * ----------------------------------------------------------------------------
-   * Añade o elimina objetos de esta lista para actualizar la sección de proyectos.
-   * Si no deseas mostrar ninguno temporalmente, deja el array vacío [].
+   * Proyectos personales en GitHub
    */
   projects: [
     {
-      id: 'homelab-infra',
+      id: 'homelab',
       title: 'Homelab Infrastructure',
-      description: 'Infraestructura contenerizada con Docker Compose, Cloudflare Zero Trust Tunnels y monitorización Uptime Kuma.',
-      tags: ['Docker', 'Ubuntu', 'Cloudflare', 'Nginx'],
-      githubUrl: 'https://github.com/guacamolegh',
+      description: 'Configuración y despliegue de servicios en Ubuntu con Docker Compose y Cloudflare Tunnel.',
+      tags: ['Docker', 'Ubuntu', 'Cloudflare'],
+      githubUrl: 'https://github.com/GuacamoleGH',
       icon: 'Server',
       featured: true,
     },
     {
-      id: 'guacamolegh-portal',
+      id: 'guacamolegh',
       title: 'GuacamoleGH Portal',
-      description: 'Dashboard principal público para el homelab desarrollado en React 19, TypeScript, Vite y Tailwind CSS.',
-      tags: ['React', 'TypeScript', 'Tailwind CSS', 'Vite'],
-      githubUrl: 'https://github.com/guacamolegh/guacamolegh',
+      description: 'Landing page y dashboard principal para el homelab construida en React, TypeScript y Tailwind.',
+      tags: ['React', 'TypeScript', 'Tailwind'],
+      githubUrl: 'https://github.com/GuacamoleGH/guacamolegh',
       liveUrl: 'https://guacamolegh.es',
       icon: 'Globe',
       featured: true,
     },
     {
-      id: 'coche-management',
-      title: 'Coche Management App',
-      description: 'Módulo de registro de repostajes, revisiones mecánicas, alertas de mantenimiento y control de costes.',
-      tags: ['Full-Stack', 'IoT', 'Docker', 'SQLite'],
-      githubUrl: 'https://github.com/guacamolegh',
+      id: 'coche-app',
+      title: 'Coche App',
+      description: 'Aplicación para seguimiento de revisiones, repostajes y mantenimiento automotriz.',
+      tags: ['Full-Stack', 'IoT'],
+      githubUrl: 'https://github.com/GuacamoleGH',
       icon: 'Wrench',
       featured: false,
     },
