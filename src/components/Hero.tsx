@@ -1,56 +1,65 @@
 import React from 'react';
 import { siteConfig } from '../data/config';
+import { ArchitectureVisual } from './ArchitectureVisual';
 import { GithubIcon } from './GithubIcon';
 import { ArrowDown } from 'lucide-react';
 
 export const Hero: React.FC = () => {
   return (
-    <section className="relative pt-14 pb-12 md:pt-20 md:pb-16 text-center">
-      {/* Luz ambiente suave de fondo */}
-      <div
-        aria-hidden="true"
-        className="pointer-events-none absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[500px] h-[280px] bg-emerald-500/10 blur-[100px] rounded-full -z-10"
-      />
+    <section className="relative pt-12 pb-16 md:pt-20 md:pb-24 border-b border-slate-800/60">
+      <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-8 items-center">
+          {/* Columna Izquierda: Presentación y Acciones */}
+          <div className="lg:col-span-7 space-y-6 text-left">
+            {/* Tag de estado de infraestructura */}
+            <div className="inline-flex items-center gap-2.5 px-3 py-1 rounded-full bg-slate-900/90 border border-slate-800 text-xs font-mono text-slate-300">
+              <span className="w-2 h-2 rounded-full bg-emerald-400 animate-pulse" />
+              <span>Homelab Privado</span>
+              <span className="text-slate-600">•</span>
+              <span className="text-emerald-400 font-sans font-medium">Ubuntu & Cloudflare</span>
+            </div>
 
-      <div className="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8">
-        {/* Indicador sutil de homelab activo */}
-        <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-slate-900/80 border border-emerald-500/25 text-xs text-emerald-400 font-medium mb-6">
-          <span className="w-2 h-2 rounded-full bg-emerald-400 animate-pulse" />
-          <span>Homelab activo</span>
-        </div>
+            {/* Nombre e Identidad */}
+            <div>
+              <h1 className="text-4xl sm:text-6xl font-bold tracking-tight text-white">
+                Guacamole<span className="text-emerald-400">GH</span>
+              </h1>
+              <p className="text-xl sm:text-2xl text-slate-300 font-medium mt-2">
+                {siteConfig.heroSubtitle}
+              </p>
+            </div>
 
-        {/* Título */}
-        <h1 className="text-4xl sm:text-5xl lg:text-6xl font-bold tracking-tight text-white mb-3">
-          {siteConfig.heroTitle}
-        </h1>
+            {/* Descripción breve y cuidada */}
+            <p className="text-base sm:text-lg text-slate-400 max-w-xl leading-relaxed">
+              Punto de entrada unificado a mi infraestructura personal: aplicaciones contenerizadas, herramientas de gestión, telemetría y proyectos de código abierto.
+            </p>
 
-        {/* Subtítulo / Descripción */}
-        <p className="text-lg sm:text-xl text-slate-300 font-normal mb-3">
-          {siteConfig.heroSubtitle}
-        </p>
-        <p className="text-base text-slate-400 max-w-xl mx-auto mb-8 leading-relaxed">
-          {siteConfig.heroDescription}
-        </p>
+            {/* Botones de acción principales */}
+            <div className="pt-2 flex flex-wrap items-center gap-3">
+              <a
+                href="#services"
+                className="inline-flex items-center gap-2 px-5 py-3 rounded-xl bg-emerald-500 hover:bg-emerald-400 text-slate-950 font-semibold text-sm transition-all shadow-md shadow-emerald-950/40 hover:scale-[1.02] active:scale-[0.98]"
+              >
+                <span>Explorar servicios</span>
+                <ArrowDown className="w-4 h-4" />
+              </a>
 
-        {/* Botones de acción */}
-        <div className="flex flex-col sm:flex-row items-center justify-center gap-3">
-          <a
-            href="#services"
-            className="w-full sm:w-auto inline-flex items-center justify-center gap-2 px-5 py-2.5 rounded-xl bg-emerald-500 hover:bg-emerald-400 text-slate-950 font-semibold text-sm transition-all hover:scale-[1.02] active:scale-[0.98] shadow-sm shadow-emerald-950"
-          >
-            <span>Ver servicios</span>
-            <ArrowDown className="w-4 h-4" />
-          </a>
+              <a
+                href={siteConfig.githubUrl}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="inline-flex items-center gap-2 px-5 py-3 rounded-xl bg-slate-900/80 hover:bg-slate-800 text-slate-200 hover:text-white border border-slate-800 hover:border-slate-700 font-medium text-sm transition-all"
+              >
+                <GithubIcon className="w-4 h-4 text-emerald-400" />
+                <span>Perfil de GitHub</span>
+              </a>
+            </div>
+          </div>
 
-          <a
-            href={siteConfig.githubUrl}
-            target="_blank"
-            rel="noopener noreferrer"
-            className="w-full sm:w-auto inline-flex items-center justify-center gap-2 px-5 py-2.5 rounded-xl bg-slate-900 hover:bg-slate-800 text-slate-200 hover:text-white border border-slate-700/80 hover:border-slate-600 font-medium text-sm transition-all hover:scale-[1.02] active:scale-[0.98]"
-          >
-            <GithubIcon className="w-4 h-4 text-emerald-400" />
-            <span>Ver en GitHub</span>
-          </a>
+          {/* Columna Derecha: Elemento visual de arquitectura */}
+          <div className="lg:col-span-5 flex justify-center lg:justify-end">
+            <ArchitectureVisual />
+          </div>
         </div>
       </div>
     </section>

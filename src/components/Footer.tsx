@@ -7,23 +7,23 @@ const CURRENT_YEAR = new Date().getFullYear();
 
 export const Footer: React.FC = () => {
   return (
-    <footer className="mt-12 border-t border-slate-800/80 bg-[#090d15]">
-      <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 py-8 flex flex-col sm:flex-row items-center justify-between gap-4">
+    <footer className="border-t border-slate-800/80 bg-[#070a10]">
+      <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-10 flex flex-col sm:flex-row items-center justify-between gap-6">
         {/* Brand */}
-        <div className="flex items-center gap-3">
-          <Logo size={24} />
-          <span className="text-xs text-slate-500">
-            &copy; {CURRENT_YEAR} GuacamoleGH. Homelab portal.
+        <div className="flex flex-col sm:flex-row items-center sm:items-start gap-3 text-center sm:text-left">
+          <Logo size={26} />
+          <span className="text-xs text-slate-500 font-mono sm:pt-1">
+            &copy; {CURRENT_YEAR} GuacamoleGH • Homelab personal
           </span>
         </div>
 
         {/* Links */}
-        <div className="flex items-center gap-5 text-xs text-slate-400">
+        <div className="flex items-center gap-6 text-xs text-slate-400">
           <a href="#services" className="hover:text-emerald-400 transition-colors">
             Servicios
           </a>
-          <a href="#status" className="hover:text-emerald-400 transition-colors">
-            Estado
+          <a href="#infra" className="hover:text-emerald-400 transition-colors">
+            Arquitectura
           </a>
           <a href="#projects" className="hover:text-emerald-400 transition-colors">
             Proyectos
