@@ -1,0 +1,27 @@
+services:
+  landing:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    container_name: guacamolegh-landing
+    restart: unless-stopped
+    ports:
+      # Puerto en el host:puerto en el contenedor
+      # Configura el puerto del host en tu archivo .env con PORT=3080
+      # para evitar cualquier colisión con Hub, Atlas, Coche o Uptime Kuma.
+      - "${PORT:-3080}:80"
+    environment:
+      - NODE_ENV=production
+    logging:
+      driver: "json-file"
+      options:
+        max-size: "10m"
+        max-file: "3"
+    # Si utilizas una red compartida con Cloudflare Tunnel (cloudflared),
+    # puedes descomentar la siguiente sección de redes:
+    # networks:
+    #   - cloudflare-tunnel-net
+
+# networks:
+#   cloudflare-tunnel-net:
+#     external: true
