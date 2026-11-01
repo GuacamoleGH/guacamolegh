@@ -28,7 +28,7 @@ export const InfraSection: React.FC = () => {
       step: '4',
       title: 'Contenedores',
       tech: 'Docker Compose',
-      desc: 'Instancias aisladas para Hub, Atlas, Coche y Nginx.',
+      desc: 'Instancias aisladas para Hub, Atlas, Coche, Games y Nginx.',
       icon: Layers,
     },
   ];

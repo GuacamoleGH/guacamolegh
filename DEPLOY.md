@@ -11,6 +11,7 @@ Landing page y dashboard público para el homelab y proyectos personales de **Gu
   - **Hub**: Portal principal y herramientas personales (`https://hub.guacamolegh.es`).
   - **Atlas**: Aplicación y mapas de proyectos (`https://atlas.guacamolegh.es`).
   - **Coche**: Gestión de mantenimiento, revisiones y telemetría (`https://coche.guacamolegh.es`).
+  - **Games**: Catálogo web de juegos arcade para navegador (`https://games.guacamolegh.es`).
 - **Sección de Infraestructura**: Flujo visual de conexión desde Cloudflare Tunnel hasta los contenedores Docker en Ubuntu Server.
 - **Sección de Proyectos**: Repositorios y desarrollos personales alojados en GitHub.
 - **100% Configurable**: Toda la información se gestiona de forma centralizada en [`src/data/config.ts`](./src/data/config.ts) o mediante variables en `.env`.

@@ -51,6 +51,16 @@ export const siteConfig: SiteConfig = {
       accentColor: 'emerald',
       isExternal: true,
     },
+    {
+      id: 'games',
+      name: 'Games',
+      description: 'Catálogo de juegos arcade clásicos para jugar en el navegador.',
+      url: import.meta.env.VITE_GAMES_URL || 'https://games.guacamolegh.es',
+      icon: 'Gamepad2',
+      category: 'application',
+      accentColor: 'cyan',
+      isExternal: true,
+    },
   ],
 
   /**
@@ -68,6 +78,16 @@ export const siteConfig: SiteConfig = {
    * Proyectos personales en GitHub
    */
   projects: [
+    {
+      id: 'games-app',
+      title: 'GuacamoleGH Games',
+      description: 'Catálogo web de juegos arcade retro (Snake, Pong, Tetris, Breakout, 3 en raya) con TypeScript y Vite.',
+      tags: ['TypeScript', 'Vite', 'HTML5', 'Vitest'],
+      githubUrl: 'https://github.com/GuacamoleGH/games',
+      liveUrl: 'https://games.guacamolegh.es',
+      icon: 'Gamepad2',
+      featured: true,
+    },
     {
       id: 'homelab',
       title: 'Homelab Infrastructure',

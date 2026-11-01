@@ -23,6 +23,7 @@ import {
   HeartPulse,
   FolderGit2,
   Lock,
+  Gamepad2,
 } from 'lucide-react';
 
 const iconMap: Record<string, React.FC<LucideProps>> = {
@@ -48,6 +49,7 @@ const iconMap: Record<string, React.FC<LucideProps>> = {
   HeartPulse,
   FolderGit2,
   Lock,
+  Gamepad2,
 };
 
 interface DynamicIconProps extends LucideProps {

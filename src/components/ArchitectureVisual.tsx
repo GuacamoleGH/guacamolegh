@@ -1,5 +1,5 @@
 import React from 'react';
-import { Globe, ShieldCheck, Server, LayoutGrid, Compass, Car } from 'lucide-react';
+import { Globe, ShieldCheck, Server, LayoutGrid, Compass, Car, Gamepad2 } from 'lucide-react';
 
 export const ArchitectureVisual: React.FC = () => {
   return (
@@ -50,7 +50,7 @@ export const ArchitectureVisual: React.FC = () => {
             <span className="text-xs font-semibold">Ubuntu Server • Docker Host</span>
           </div>
 
-          {/* Conexión ramificada SVG hacia los 3 servicios */}
+          {/* Conexión ramificada SVG hacia los 4 servicios */}
           <svg
             className="w-full h-8 text-slate-700"
             viewBox="0 0 300 32"
@@ -60,31 +60,38 @@ export const ArchitectureVisual: React.FC = () => {
             {/* Línea central */}
             <path d="M150 0V16" stroke="currentColor" strokeWidth="1.5" />
             {/* Ramal horizontal */}
-            <path d="M50 16H250" stroke="currentColor" strokeWidth="1.5" />
-            {/* Bajada a cada uno de los 3 servicios */}
-            <path d="M50 16V32" stroke="currentColor" strokeWidth="1.5" />
-            <path d="M150 16V32" stroke="currentColor" strokeWidth="1.5" />
-            <path d="M250 16V32" stroke="currentColor" strokeWidth="1.5" />
+            <path d="M38 16H262" stroke="currentColor" strokeWidth="1.5" />
+            {/* Bajada a cada uno de los 4 servicios */}
+            <path d="M38 16V32" stroke="currentColor" strokeWidth="1.5" />
+            <path d="M112 16V32" stroke="currentColor" strokeWidth="1.5" />
+            <path d="M188 16V32" stroke="currentColor" strokeWidth="1.5" />
+            <path d="M262 16V32" stroke="currentColor" strokeWidth="1.5" />
           </svg>
 
           {/* Nodos de servicios Docker */}
-          <div className="w-full grid grid-cols-3 gap-2 pt-1">
-            <div className="flex flex-col items-center justify-center p-2.5 rounded-xl bg-slate-950/80 border border-emerald-500/25 text-center group">
-              <LayoutGrid className="w-4 h-4 text-emerald-400 mb-1" />
-              <span className="text-xs font-bold text-white">Hub</span>
-              <span className="text-[10px] font-mono text-slate-400">Portal</span>
+          <div className="w-full grid grid-cols-4 gap-1.5 pt-1">
+            <div className="flex flex-col items-center justify-center p-2 rounded-xl bg-slate-950/80 border border-emerald-500/25 text-center">
+              <LayoutGrid className="w-3.5 h-3.5 text-emerald-400 mb-1" />
+              <span className="text-[11px] font-bold text-white">Hub</span>
+              <span className="text-[9px] font-mono text-slate-400">Portal</span>
             </div>
 
-            <div className="flex flex-col items-center justify-center p-2.5 rounded-xl bg-slate-950/80 border border-slate-800 text-center">
-              <Compass className="w-4 h-4 text-teal-400 mb-1" />
-              <span className="text-xs font-bold text-white">Atlas</span>
-              <span className="text-[10px] font-mono text-slate-400">Gestión</span>
+            <div className="flex flex-col items-center justify-center p-2 rounded-xl bg-slate-950/80 border border-slate-800 text-center">
+              <Compass className="w-3.5 h-3.5 text-teal-400 mb-1" />
+              <span className="text-[11px] font-bold text-white">Atlas</span>
+              <span className="text-[9px] font-mono text-slate-400">Gestión</span>
             </div>
 
-            <div className="flex flex-col items-center justify-center p-2.5 rounded-xl bg-slate-950/80 border border-slate-800 text-center">
-              <Car className="w-4 h-4 text-emerald-400 mb-1" />
-              <span className="text-xs font-bold text-white">Coche</span>
-              <span className="text-[10px] font-mono text-slate-400">Vehículo</span>
+            <div className="flex flex-col items-center justify-center p-2 rounded-xl bg-slate-950/80 border border-slate-800 text-center">
+              <Car className="w-3.5 h-3.5 text-emerald-400 mb-1" />
+              <span className="text-[11px] font-bold text-white">Coche</span>
+              <span className="text-[9px] font-mono text-slate-400">Vehículo</span>
+            </div>
+
+            <div className="flex flex-col items-center justify-center p-2 rounded-xl bg-slate-950/80 border border-slate-800 text-center">
+              <Gamepad2 className="w-3.5 h-3.5 text-teal-400 mb-1" />
+              <span className="text-[11px] font-bold text-white">Games</span>
+              <span className="text-[9px] font-mono text-slate-400">Arcade</span>
             </div>
           </div>
         </div>
