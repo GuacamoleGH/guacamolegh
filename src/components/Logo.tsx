@@ -13,11 +13,11 @@ export const Logo: React.FC<LogoProps> = ({
 }) => {
   return (
     <div className={`flex items-center gap-2.5 select-none ${className}`}>
-      {/* Nuevo logo oficial de GuacamoleGH */}
+      {/* Logo oficial de GuacamoleGH */}
       <img
         src="/guacamoleghlogo.png"
         alt="GuacamoleGH Logo"
-        className="rounded-xl object-contain shrink-0 border border-emerald-500/30 shadow-sm shadow-emerald-950/40 bg-slate-950"
+        className="shrink-0 object-contain"
         style={{ width: size, height: size }}
       />
 
