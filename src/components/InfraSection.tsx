@@ -51,12 +51,6 @@ export const InfraSection: React.FC = () => {
 
         {/* Diagrama de Flujo / Pipeline continuo */}
         <div className="relative rounded-3xl bg-[#0b0f17]/90 border border-slate-800/80 p-6 sm:p-8 backdrop-blur-md">
-          {/* Línea horizontal continua visible en escritorio */}
-          <div
-            aria-hidden="true"
-            className="hidden lg:block absolute top-[52px] left-[10%] right-[10%] h-[2px] bg-gradient-to-r from-teal-500/30 via-emerald-500/40 to-teal-500/30"
-          />
-
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 sm:gap-4 relative z-10">
             {pipeline.map((item, index) => {
               const Icon = item.icon;
@@ -65,8 +59,16 @@ export const InfraSection: React.FC = () => {
                   key={item.title}
                   className="relative flex flex-col items-start sm:items-center text-left sm:text-center p-3"
                 >
+                  {/* Línea conectora hacia el siguiente paso en escritorio (centrada exactamente en el punto medio del icono) */}
+                  {index < pipeline.length - 1 && (
+                    <div
+                      aria-hidden="true"
+                      className="hidden lg:block absolute top-[36px] -translate-y-1/2 left-1/2 w-[calc(100%+1rem)] h-[2px] bg-gradient-to-r from-emerald-500/50 via-teal-500/40 to-emerald-500/50 z-0 pointer-events-none"
+                    />
+                  )}
+
                   {/* Nodo numérico con icono sobre la línea */}
-                  <div className="relative flex items-center justify-center w-12 h-12 rounded-2xl bg-slate-900 border border-emerald-500/30 text-emerald-400 shadow-md mb-4 shrink-0">
+                  <div className="relative z-10 flex items-center justify-center w-12 h-12 rounded-2xl bg-slate-900 border border-emerald-500/30 text-emerald-400 shadow-md mb-4 shrink-0">
                     <Icon className="w-5 h-5" />
                     <span className="absolute -top-1.5 -right-1.5 w-5 h-5 rounded-full bg-slate-800 border border-slate-700 text-[10px] font-mono text-slate-300 flex items-center justify-center">
                       {item.step}
