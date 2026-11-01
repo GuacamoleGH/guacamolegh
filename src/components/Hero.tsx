@@ -8,7 +8,7 @@ export const Hero: React.FC = () => {
   return (
     <section className="relative pt-12 pb-16 md:pt-20 md:pb-24 border-b border-slate-800/60">
       <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-8 items-center">
+        <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-8 items-center">
           {/* Columna Izquierda: Presentación y Acciones */}
           <div className="lg:col-span-7 space-y-6 text-left">
             {/* Tag de estado de infraestructura */}
@@ -24,13 +24,13 @@ export const Hero: React.FC = () => {
               <h1 className="text-4xl sm:text-6xl font-bold tracking-tight text-white">
                 Guacamole<span className="text-emerald-400">GH</span>
               </h1>
-              <p className="text-xl sm:text-2xl text-slate-300 font-medium mt-2">
+              <p className="text-xl sm:text-2xl text-slate-200 font-medium mt-2">
                 {siteConfig.heroSubtitle}
               </p>
             </div>
 
             {/* Descripción breve y cuidada */}
-            <p className="text-base sm:text-lg text-slate-400 max-w-xl leading-relaxed">
+            <p className="text-base sm:text-lg text-slate-300 max-w-xl leading-relaxed">
               Punto de entrada unificado a mi infraestructura personal: aplicaciones contenerizadas, herramientas de gestión, telemetría y proyectos de código abierto.
             </p>
 

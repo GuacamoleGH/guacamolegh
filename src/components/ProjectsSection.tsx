@@ -20,7 +20,7 @@ export const ProjectsSection: React.FC = () => {
             <h2 className="text-2xl sm:text-3xl font-bold text-white tracking-tight">
               Proyectos Personales
             </h2>
-            <p className="text-slate-400 text-sm mt-1 max-w-xl">
+            <p className="text-slate-300 text-sm sm:text-base mt-1.5 max-w-xl leading-relaxed">
               Repositorios y código de las herramientas del homelab alojados en GitHub.
             </p>
           </div>
@@ -37,37 +37,38 @@ export const ProjectsSection: React.FC = () => {
         </div>
 
         {/* Lista visual de repositorios */}
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-5">
           {projects.map((project) => (
             <a
               key={project.id}
               href={project.githubUrl || siteConfig.githubUrl}
               target="_blank"
               rel="noopener noreferrer"
-              className="group p-5 rounded-2xl bg-[#0d121c] hover:bg-slate-900/90 border border-slate-800/80 hover:border-slate-700 flex flex-col justify-between transition-all duration-200 hover:-translate-y-0.5"
+              className="group p-6 rounded-2xl bg-[#0c1018] hover:bg-slate-900/90 border border-slate-800 hover:border-slate-700 flex flex-col justify-between transition-all duration-200 hover:-translate-y-0.5"
             >
               <div>
-                <div className="flex items-center justify-between mb-3">
-                  <div className="flex items-center gap-2">
-                    <FolderGit2 className="w-4 h-4 text-emerald-400" />
-                    <span className="text-sm font-bold font-mono text-white group-hover:text-emerald-300 transition-colors">
+                <div className="flex items-center justify-between mb-3.5">
+                  <div className="flex items-center gap-2.5">
+                    <FolderGit2 className="w-4 h-4 text-emerald-400 shrink-0" />
+                    <span className="text-base font-bold font-mono text-white group-hover:text-emerald-300 transition-colors">
                       {project.title}
                     </span>
                   </div>
-                  <ArrowUpRight className="w-4 h-4 text-slate-500 group-hover:text-slate-300 transition-colors" />
+                  <ArrowUpRight className="w-4 h-4 text-slate-500 group-hover:text-slate-300 transition-colors shrink-0" />
                 </div>
 
-                <p className="text-xs text-slate-400 leading-relaxed mb-4">
+                {/* Texto descriptivo aumentado en legibilidad y contraste */}
+                <p className="text-sm text-slate-300 leading-relaxed mb-5">
                   {project.description}
                 </p>
               </div>
 
               {/* Tecnologías confirmadas */}
-              <div className="flex flex-wrap gap-1.5 pt-3 border-t border-slate-800/60 font-mono text-[10px]">
+              <div className="flex flex-wrap gap-1.5 pt-3.5 border-t border-slate-800/70 font-mono text-xs">
                 {project.tags.map((tag) => (
                   <span
                     key={tag}
-                    className="px-2 py-0.5 rounded bg-slate-800/80 text-slate-400"
+                    className="px-2 py-0.5 rounded-md bg-slate-800/80 text-slate-300"
                   >
                     {tag}
                   </span>
