@@ -12,8 +12,9 @@ Landing page y dashboard público para el homelab y proyectos personales de **Gu
   - **Atlas**: Aplicación y mapas de proyectos (`https://atlas.guacamolegh.es`).
   - **Coche**: Gestión de mantenimiento, revisiones y telemetría (`https://coche.guacamolegh.es`).
   - **Games**: Catálogo web de juegos arcade para navegador (`https://games.guacamolegh.es`).
+  - **Flags**: Quiz interactivo de banderas del mundo (`https://flags.guacamolegh.es`).
 - **Sección de Infraestructura**: Flujo visual de conexión desde Cloudflare Tunnel hasta los contenedores Docker en Ubuntu Server.
-- **Sección de Proyectos**: Repositorios y desarrollos personales alojados en GitHub.
+- **Sección de Proyectos**: Repositorios y desarrollos personales alojados en GitHub (incluyendo herramientas de escritorio y plugins para periféricos).
 - **100% Configurable**: Toda la información se gestiona de forma centralizada en [`src/data/config.ts`](./src/data/config.ts) o mediante variables en `.env`.
 - **Docker Ready**: Multi-stage build con Node 22 y Nginx Alpine optimizado para servir assets estáticos bajo Cloudflare Tunnel.
 
@@ -61,7 +62,7 @@ npm run preview
 ### Paso 1: Conectar al servidor Ubuntu
 ```bash
 ssh usuario@tu-servidor-ip
-cd /ruta/hacia/guacamolegh
+cd /ruta/hacia/guacamolegh/main
 git pull origin main
 ```
 

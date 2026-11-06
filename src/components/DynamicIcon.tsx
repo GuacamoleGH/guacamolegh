@@ -24,6 +24,9 @@ import {
   FolderGit2,
   Lock,
   Gamepad2,
+  Flag,
+  BatteryCharging,
+  Headphones,
 } from 'lucide-react';
 
 const iconMap: Record<string, React.FC<LucideProps>> = {
@@ -50,6 +53,9 @@ const iconMap: Record<string, React.FC<LucideProps>> = {
   FolderGit2,
   Lock,
   Gamepad2,
+  Flag,
+  BatteryCharging,
+  Headphones,
 };
 
 interface DynamicIconProps extends LucideProps {
