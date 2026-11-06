@@ -27,6 +27,8 @@ import {
   Flag,
   BatteryCharging,
   Headphones,
+  Zap,
+  Gauge,
 } from 'lucide-react';
 
 const iconMap: Record<string, React.FC<LucideProps>> = {
@@ -56,6 +58,8 @@ const iconMap: Record<string, React.FC<LucideProps>> = {
   Flag,
   BatteryCharging,
   Headphones,
+  Zap,
+  Gauge,
 };
 
 interface DynamicIconProps extends LucideProps {

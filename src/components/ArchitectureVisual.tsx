@@ -50,27 +50,44 @@ export const ArchitectureVisual: React.FC = () => {
             <span className="text-xs font-semibold">Ubuntu Server • Docker Host</span>
           </div>
 
-          {/* Conexión ramificada SVG hacia los 5 servicios */}
-          <svg
-            className="w-full h-8 text-slate-700"
-            viewBox="0 0 300 32"
-            fill="none"
-            xmlns="http://www.w3.org/2000/svg"
-          >
-            {/* Línea central */}
-            <path d="M150 0V16" stroke="currentColor" strokeWidth="1.5" />
-            {/* Ramal horizontal */}
-            <path d="M30 16H270" stroke="currentColor" strokeWidth="1.5" />
-            {/* Bajada a cada uno de los 5 servicios */}
-            <path d="M30 16V32" stroke="currentColor" strokeWidth="1.5" />
-            <path d="M90 16V32" stroke="currentColor" strokeWidth="1.5" />
-            <path d="M150 16V32" stroke="currentColor" strokeWidth="1.5" />
-            <path d="M210 16V32" stroke="currentColor" strokeWidth="1.5" />
-            <path d="M270 16V32" stroke="currentColor" strokeWidth="1.5" />
-          </svg>
+          {/* Tronco vertical central */}
+          <div className="w-px h-3 bg-slate-700" />
+
+          {/* Distribuidor ramificado de 5 columnas alineado al 100% con los servicios */}
+          <div className="w-full grid grid-cols-5 gap-1">
+            {/* Columna 1: Hub */}
+            <div className="relative h-4 flex justify-center">
+              <div className="absolute top-0 left-1/2 -right-1 h-px bg-slate-700" />
+              <div className="w-px h-full bg-slate-700" />
+            </div>
+
+            {/* Columna 2: Atlas */}
+            <div className="relative h-4 flex justify-center">
+              <div className="absolute top-0 -left-1 -right-1 h-px bg-slate-700" />
+              <div className="w-px h-full bg-slate-700" />
+            </div>
+
+            {/* Columna 3: Coche */}
+            <div className="relative h-4 flex justify-center">
+              <div className="absolute top-0 -left-1 -right-1 h-px bg-slate-700" />
+              <div className="w-px h-full bg-slate-700" />
+            </div>
+
+            {/* Columna 4: Games */}
+            <div className="relative h-4 flex justify-center">
+              <div className="absolute top-0 -left-1 -right-1 h-px bg-slate-700" />
+              <div className="w-px h-full bg-slate-700" />
+            </div>
+
+            {/* Columna 5: Flags */}
+            <div className="relative h-4 flex justify-center">
+              <div className="absolute top-0 -left-1 right-1/2 h-px bg-slate-700" />
+              <div className="w-px h-full bg-slate-700" />
+            </div>
+          </div>
 
           {/* Nodos de servicios Docker */}
-          <div className="w-full grid grid-cols-5 gap-1 pt-1">
+          <div className="w-full grid grid-cols-5 gap-1">
             <div className="flex flex-col items-center justify-center p-1.5 rounded-xl bg-slate-950/80 border border-emerald-500/25 text-center">
               <LayoutGrid className="w-3.5 h-3.5 text-emerald-400 mb-0.5" />
               <span className="text-[10px] font-bold text-white">Hub</span>

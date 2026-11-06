@@ -1,7 +1,8 @@
 import React from 'react';
 import { siteConfig } from '../data/config';
 import { GithubIcon } from './GithubIcon';
-import { FolderGit2, ArrowUpRight } from 'lucide-react';
+import { DynamicIcon } from './DynamicIcon';
+import { ArrowUpRight } from 'lucide-react';
 
 export const ProjectsSection: React.FC = () => {
   const { projects } = siteConfig;
@@ -49,7 +50,7 @@ export const ProjectsSection: React.FC = () => {
               <div>
                 <div className="flex items-center justify-between mb-3.5">
                   <div className="flex items-center gap-2.5">
-                    <FolderGit2 className="w-4 h-4 text-emerald-400 shrink-0" />
+                    <DynamicIcon name={project.icon || 'FolderGit2'} className="w-4 h-4 text-emerald-400 shrink-0" />
                     <span className="text-base font-bold font-mono text-white group-hover:text-emerald-300 transition-colors">
                       {project.title}
                     </span>

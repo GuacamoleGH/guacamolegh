@@ -54,7 +54,7 @@ export const siteConfig: SiteConfig = {
     {
       id: 'games',
       name: 'Games',
-      description: 'Catálogo de juegos arcade clásicos para jugar en el navegador.',
+      description: 'Catálogo de 9 juegos arcade clásicos para navegador (Snake, Pong, Tetris, Space Invaders, etc.).',
       url: import.meta.env.VITE_GAMES_URL || 'https://games.guacamolegh.es',
       icon: 'Gamepad2',
       category: 'application',
@@ -89,6 +89,24 @@ export const siteConfig: SiteConfig = {
    */
   projects: [
     {
+      id: 'tachyon',
+      title: 'Tachyon',
+      description: 'Telemetría automovilística de alto rendimiento para circuito y carretera en Android: interfaz estilo MyChron 5 / MoTeC, OBD-II BLE de alta velocidad, IMU a 50 Hz, GPS 10 Hz y grabación FHD 1080p.',
+      tags: ['Android', 'Kotlin', 'Jetpack Compose', 'OBD-II BLE', 'CameraX'],
+      githubUrl: 'https://github.com/GuacamoleGH/Tachyon',
+      icon: 'Zap',
+      featured: true,
+    },
+    {
+      id: 'tachyon-studio-rust',
+      title: 'Tachyon Studio',
+      description: 'Suite de escritorio en Rust y Tauri 2 para telemetría automovilística: editor visual de overlays a 60 FPS, aceleración por hardware con WebCodecs y pipeline de memoria acotada (< 500 MB).',
+      tags: ['Rust', 'Tauri 2', 'React 19', 'TypeScript', 'WebCodecs'],
+      githubUrl: 'https://github.com/GuacamoleGH/Tachyon-Studio-Rust',
+      icon: 'Gauge',
+      featured: true,
+    },
+    {
       id: 'flags-quiz',
       title: 'GuacamoleGH Flags',
       description: 'Quiz interactivo bilingüe de banderas de los 196 países del mundo con modos por continente, anti-trampas heurístico y rankings globales.',
@@ -119,8 +137,8 @@ export const siteConfig: SiteConfig = {
     {
       id: 'games-app',
       title: 'GuacamoleGH Games',
-      description: 'Catálogo web de juegos arcade retro (Snake, Pong, Tetris, Breakout, 3 en raya) desarrollado con TypeScript y Vite.',
-      tags: ['TypeScript', 'Vite', 'HTML5', 'Vitest'],
+      description: 'Catálogo web de 9 juegos arcade clásicos (Snake, Pong, Tetris, Breakout, Tres en raya, Space Invaders, Pac-Man, Asteroids, Blackjack) con TypeScript, Vite y Web Audio API.',
+      tags: ['TypeScript', 'Vite', 'Web Audio API', 'Vitest'],
       githubUrl: 'https://github.com/GuacamoleGH/games',
       liveUrl: 'https://games.guacamolegh.es',
       icon: 'Gamepad2',

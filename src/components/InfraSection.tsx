@@ -51,10 +51,10 @@ export const InfraSection: React.FC = () => {
 
         {/* Diagrama de Flujo / Pipeline continuo */}
         <div className="relative rounded-3xl bg-[#0b0f17]/90 border border-slate-800/80 p-6 sm:p-8 backdrop-blur-md">
-          {/* Línea horizontal continua visible en escritorio */}
+          {/* Línea horizontal continua visible en escritorio, exactamente centrada con los nodos */}
           <div
             aria-hidden="true"
-            className="hidden lg:block absolute top-[52px] left-[10%] right-[10%] h-[2px] bg-gradient-to-r from-teal-500/30 via-emerald-500/40 to-teal-500/30"
+            className="hidden lg:block absolute top-[67px] left-[12.5%] right-[12.5%] h-[2px] bg-gradient-to-r from-teal-500/30 via-emerald-500/40 to-teal-500/30"
           />
 
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 sm:gap-4 relative z-10">
